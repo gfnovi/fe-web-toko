@@ -1,0 +1,481 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import 'animate.css';
+
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.item{ height:70%;}
+
+.try-carousel{
+    height: 20%;
+}
+.card-home {
+    
+    transition: transform 0.2s ease;
+    box-shadow: 0 3px 5px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 1.0em;
+  }
+  .card-home:hover {
+    transform: scale(1.05);
+  }
+  .card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+     
+}
+  .card-detail {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+}
+footer{
+  background-color: #eaeaea
+}
+.gambarnews{
+  height: 150px;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+      display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+      display: block;
+  }
+}
+.btn-danger {
+width: 20px
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+
+.about-section .counter p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.about-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  // border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+}
+.about-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.about-section .counter .count {
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
+}
+
+
+
+.weekBook{
+  
+  background: url('../public/images/bg1.png');
+  // transform: rotateX(30deg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.newsBook{
+  background: url('../public/images/bg3.png');
+  // transform: rotateX(30deg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text-animation{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #5536c4 20%,
+    #30df00 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.jumbotron-image{
+  height:500px;
+  background-image: linear-gradient(to bottom, rgba(104, 104, 104, 0.6) 0%,rgba(78, 78, 78, 0.6) 100%), url('https://subscriptionmarketingbook.com/wp-content/uploads/2022/03/photo-1589998059171-988d887df646-1.jpg');
+  text-align: center;
+  position: relative;
+}
+.bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-news {
+  position: absolute !important;
+  left: 50%!important;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  top: 50%!important;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 50px
+}
+
+.navbar-header a{
+  text-decoration: none;
+}
+
+.navbarex {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index:99;
+  background-color: rgb(120, 118, 118); /* Black fallback color */
+  background-color: rgb(255, 255, 255); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+position: fixed;
+}
+
+/* Position the content inside the overlay */
+.navbarex-nav {
+  position: absolute;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.navbarex a {
+  padding: 2px;
+  text-decoration: none;
+  // font-size: 20px;
+  color: rgb(20, 20, 20);
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.navbarex a:hover, .navbarex a:focus {
+  color: #f5a1a1;
+}
+.navbarex-nav li {
+  text-decoration: none;
+  list-style-type: none;
+}
+/* Position the close button (top right corner) */
+.navbarex .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: rgb(5, 5, 5);
+}
+.navbarex .navimage{
+  position: absolute;
+  top: 40px;
+  left: 45px;
+  width: 100%;
+  color: white;
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .navbarex a {font-size: 20px}
+  .navbarex .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+table * {
+  white-space: nowrap;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.wrapper-form{
+    max-width: 850px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    margin: 50px auto;
+    box-shadow: 0 8px 20px 0px #1f1f1f1a;
+    overflow: hidden;
+}
+
+.wrapper-form h2{
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px 0 0;
+    margin-bottom: 34px;
+    pointer-events: none;
+}
+
+.wrapper-form .form-right{
+    padding: 20px 40px;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper-form .form-right h2{
+    color: #3786bd;
+}
+
+.wrapper-form .form-right label{
+    font-weight: 600;
+    font-size: 15px;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.wrapper-form .form-right .input-field{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e5e5e5;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    color: #333;
+}
+
+.wrapper-form .form-right .input-field:focus{
+    border: 1px solid #31a031;
+}
+
+
+.wrapper-form .option {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none
+}
+
+.wrapper-form .option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0
+}
+
+.wrapper-form .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 2px
+}
+
+.wrapper-form .option:hover input~.checkmark {
+    background-color: #f1f1f1
+}
+
+.wrapper-form .option input:checked~.checkmark {
+    border: 2px solid #e5e5e5;
+    background-color: #fff;
+    transition: 300ms ease-in-out all
+}
+
+.wrapper-form .checkmark:after {
+    content: "\2713";
+    position: absolute;
+    display: none;
+    color: #3786bd;
+    font-size: 1rem;
+}
+
+.wrapper-form .option input:checked~.checkmark:after {
+    display: block
+}
+
+.wrapper-form .option .checkmark:after {
+    left: 2px;
+    top: -4px;
+    width: 5px;
+    height: 10px
+}
+
+.wrapper-form .register{
+    padding: 12px;
+    background: #3786bd;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 130px;
+    border: none;
+    margin: 6px 0 50px 0px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.wrapper-form .register:hover{
+    background-color: #3785bde0;
+}
+
+.wrapper-form a{
+    text-decoration: none;
+}
+
+@media (max-width: 860.5px) {
+    .wrapper-form{
+        margin: 50px 5px;
+    }
+}
+
+
+@media (max-width: 767.5px){
+    .wrapper-form{
+        flex-direction: column;
+        margin: 30px 20px;
+    }
+
+
+    
+}
+
+@media (max-width: 575px) {
+
+    .wrapper-form{
+        margin: 30px 15px;
+    }
+
+    .wrapper-form .form-right{
+        padding: 25px;
+    }
+}
+
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+
+.navbar-toggle{
+  // margin: 0;
+  // position: absolute;
+  top: 50%;
+  // // -ms-transform: translateY(-50%);
+  transform: translateY(50%);
+  border: 0;
+  float: right;
+}
+
+ul{
+  list-style: none;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar{
+ height: 100%;
+  // z-index: 99;
+  top: 0;
+  left: 0;
+  overflow:hidden;
+  padding-top: 20px;
+}
+
+// .col-3 {
+//   padding-bottom: 100%;
+//   margin-bottom: -100%;
+// }
+
+// .col-9 {
+//   overflow: hidden;
+// }
+
+.color-white {
+  color:white
+}
