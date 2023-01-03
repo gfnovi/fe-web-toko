@@ -1,5 +1,6 @@
 
   import axios from "axios";
+import { authHeader } from "./auth";
 
   const API_URL = "http://localhost:8000/api/";
   
@@ -23,8 +24,16 @@
     })
   }
 
+  const deleteCart = (id:string)=>{
+    return axios.delete(API_URL+`cart/delete/${id}`, {headers:authHeader()}).then((res)=>{
+      return res.data;
+
+    })
+  }
+
 export default{
     deleteCategory,
     deleteProduct,
-    deleteUser
+    deleteUser,
+    deleteCart
 }

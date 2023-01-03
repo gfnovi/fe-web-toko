@@ -1,14 +1,24 @@
+import axios from "axios";
+
 const user = JSON.parse(localStorage.getItem("user"));
 
+const parseJwt = (token:string) => {
+  try {
+     return JSON.parse(atob(token.split(".")[1]))
+  } catch (e) {
+    return null;
+  }
+};
+export const authHeader =() => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user && user.token) {
+      return { Authorization: "Bearer " + user.token };
 
- const authHeader = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.accessToken) {
-      return { Authorization: "Bearer " + user.accessToken };
-    } else {
-      return {};
-    }
-  };
+  } else {
+    return {};
+  }
+};
+
   
  const check_roles =():string=>{
   if (user && user.roles) {
@@ -25,8 +35,22 @@ const getUserId =():string=>{
     return null;
   }
 }
+
+const check_token=()=>{
+  const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      const decodedJwt = parseJwt(user.token);
+      console.log(decodedJwt)
+      if (decodedJwt.exp * 1000 < Date.now()) {
+        return "expired"
+      }else{
+        return "not_expired"
+      }
+    }
+
+}
 export {
-  authHeader,
+  check_token,
   check_roles ,
   getUserId
 }

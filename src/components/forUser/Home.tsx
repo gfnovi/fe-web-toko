@@ -11,7 +11,7 @@ import swal from "sweetalert";
 import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 import getData from "../../services/getData";
 import Header from "./Header";
-import { check_roles,getUserId } from "../../services/auth"
+import { check_roles,check_token,getUserId } from "../../services/auth"
 import addData from "../../services/addData";
 
 const Home = () => {
@@ -39,11 +39,12 @@ const Home = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
 
+  const cek_token = check_token()
   useEffect(() => {
-    // console.log(roles)
-    // if(roles === null){
-    //   navigate('/')
-    // }else{
+    if(cek_token ==='expired'){
+    localStorage.removeItem("user");
+    window.location.href = "/";
+    }else{
       getData
       .getCategory()
       .then((response) => {
@@ -61,8 +62,8 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
       });
-    // }
     
+    }
   }, [loading]);
 
   const getProductByCate = (category_id: string) => {

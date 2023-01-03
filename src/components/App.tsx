@@ -22,6 +22,7 @@ import AddProduct from "./forAdmin/Product/AddProduct";
 import ListUser from "./forAdmin/User/ListUser"
 import AddUser from "./forAdmin/User/AddUser";
 import EditUser from "./forAdmin/User/EditUser";
+import Cart from "./forUser/Cart";
 
 const App = () => {
   // type Basket = {
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/admin/settings/addUser" element={<AddUser/>} />
           <Route path="/admin/settings/editUser" element={<EditUser/>} />
           <Route path="/home" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/admin/settings/users" element={<ListUser />} />
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />

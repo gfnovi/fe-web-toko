@@ -1,12 +1,15 @@
-import { faSignOut, faUser, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faSignOut, faUser, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { border } from "@mui/system";
 import { right } from "@popperjs/core";
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { basketContext } from "../../context/contextProduct";
+import { getUserId } from "../../services/auth";
 const Header = () => {
   const closeNav = () => {};
+  const navigate = useNavigate();
+  const userId = getUserId()
 
   const {values,setvalues}= useContext(basketContext)
   
@@ -26,7 +29,9 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <NavLink to='/home' className="nav-link">
+          Home
+          </NavLink>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Link</a>
@@ -43,7 +48,11 @@ const Header = () => {
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link">Disabled</a>
+          <NavLink to={`/cart?userId=${userId}`} className='nav-link'>
+          {/* <a className="nav-link"> */}
+            <FontAwesomeIcon icon={faCartShopping}/>
+          {/* </a> */}
+          </NavLink>
         </li>
       </ul>
       <span>
