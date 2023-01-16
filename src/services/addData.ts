@@ -54,6 +54,13 @@ const login = (email: string, password: string) => {
 
     })
   }
+
+  const addTransaction=(data:FormData)=>{
+    return axios.post(API_URL+"api/transaction/create", data, { headers: authHeader() }).then((res)=>{
+      return res.data;
+
+    })
+  }
 export default{
     login,
     signup,
@@ -61,5 +68,6 @@ export default{
     uploadImage,
     addProduct,
     addUser,
-    addCart
+    addCart,
+    addTransaction
 }

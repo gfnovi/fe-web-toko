@@ -39,8 +39,7 @@ const getUserId =():string=>{
 const check_token=()=>{
   const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
-      const decodedJwt = parseJwt(user.token);
-      console.log(decodedJwt)
+      const decodedJwt = parseJwt(user.token)
       if (decodedJwt.exp * 1000 < Date.now()) {
         return "expired"
       }else{
