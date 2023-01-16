@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Basket from "./forAdmin/User/ListUser";
 import AddCategory from "./forAdmin/Category/AddCategory";
 import Home from "./forUser/Home"
-import Books from "./Books";
-import BooksDetail from "./BooksDetail";
 import News from "./News";
 import Products from "./forAdmin/Product/Products";
 import "../styles.scss";
@@ -25,44 +23,12 @@ import EditUser from "./forAdmin/User/EditUser";
 import Cart from "./forUser/Cart";
 
 const App = () => {
-  // type Basket = {
-  //   id: number;
-  //   book: any;
-  //   price: number;
-  //   quantity: number;
-  // };
-
-  // const [baskets, setBasket] = useState<Basket[]>([]);
-  // useEffect(() => {
-  //   axios
-  //     .get(API_URL + "basket")
-  //     .then((response) => {
-  //       setBasket(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // },[]);
-
-  // const tot_qty = baskets.reduce(function (result, item) {
-  //   return result + item.quantity;
-  // }, 0);
-
-  // const [values,setvalues]= useState<number>()
-  
-  // useEffect(()=>{
-  //   setvalues(tot_qty)
-  // },[tot_qty])
-
-
   
   return (
     <div className="App">
       {/* <basketContext.Provider value={{values,setvalues}}> */}
         <Routes>
           <Route path="/admin/dashboard" element={<News />} />
-          <Route path="/admin/order" element={<Books />} />
-          {/* <Route path="/admin/orders" element={<Home />} /> */}
           <Route path="/admin/settings/categories" element={<AddCategory />} />
           <Route path="/admin/settings/products" element={<Products />} />
           <Route path="/admin/settings/editProduct" element={<EditProduct />} />

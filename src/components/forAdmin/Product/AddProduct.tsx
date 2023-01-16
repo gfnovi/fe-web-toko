@@ -31,6 +31,7 @@ const AddProduct = () => {
   const [stockProduct, setstockProduct] = useState<string>("");
   const [nameProduct, setnameProduct] = useState<string>("");
   const [priceProduct, setpriceProduct] = useState<string>("");
+  const [weightProduct, setweightProduct] = useState<string>("");
   const [categoryProduct, setcategoryProduct] = useState<string>("");
   const navigate = useNavigate();
 
@@ -64,6 +65,7 @@ const AddProduct = () => {
       formData.append("name", nameProduct);
       formData.append("price", priceProduct);
       formData.append("category", categoryProduct);
+      formData.append("weight", weightProduct);
       await addData
         .addProduct(formData)
         .then((res) => {
@@ -168,6 +170,17 @@ const AddProduct = () => {
                   className="form-control"
                   onChange={(e) => {
                     setstockProduct(e.currentTarget.value);
+                  }}
+                ></input>
+              </div>
+              <div className="col">
+                <label>Weight (in kg)</label>
+                <input
+                  value={weightProduct}
+                  type="number"
+                  className="form-control"
+                  onChange={(e) => {
+                    setweightProduct(e.currentTarget.value);
                   }}
                 ></input>
               </div>

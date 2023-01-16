@@ -1,5 +1,6 @@
 
   import axios from "axios";
+  import { authHeader } from "./auth";
 
   const API_URL = "http://localhost:8000/api/";
   
@@ -25,9 +26,17 @@
     })
   }
 
+  const editCart=(data:FormData)=>{
+    return axios.put(API_URL+"cart/edit", data, { headers: authHeader() }).then((res)=>{
+      return res.data;
+
+    })
+  }
+
   export default{
     EditCategory,
     EditProduct,
-    EditUser
+    EditUser,
+    editCart
   }
 

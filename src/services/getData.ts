@@ -44,6 +44,24 @@ const getCartByUserId=(UserId:string)=>{
         return res.data
     })
 }
+const getProvince=()=>{
+    return axios.get(API_URL+"ongkir/listProvince", { headers: authHeader() }).then((res)=>{
+        return res.data.rajaongkir.results
+    })
+}
+
+const getCity=(provinceId:string)=>{
+    return axios.get(API_URL+"ongkir/listCity/"+provinceId, { headers: authHeader() }).then((res)=>{
+        return res.data.rajaongkir.results
+    })
+}
+
+const getShipping=(data:FormData)=>{
+    return axios.post(API_URL+"ongkir/shippingFee", data, { headers: authHeader() }).then((res)=>{
+        return res.data.rajaongkir.results
+
+    })
+}
 
 export default{
     getCategory,
@@ -52,5 +70,8 @@ export default{
     getListUser,
     getUserbyId,
     getProductbyCategory,
-    getCartByUserId
+    getCartByUserId,
+    getProvince,
+    getCity,
+    getShipping
 }

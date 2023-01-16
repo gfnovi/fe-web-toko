@@ -31,20 +31,23 @@ const Home = () => {
   const [categories, setCategoriesList] = useState<Category[]>([]);
   const [clickedGenre, setClickedCategory] = useState<string>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [userid, setUserid]= useState("")
   
   // const HomeDetail = createContext<Book>(null)
   // SHOW FIRST PAGE Home
   const roles = check_roles();
-  const userId = getUserId()
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
 
   const cek_token = check_token()
   useEffect(() => {
+  setUserid(getUserId())
+
     if(cek_token ==='expired'){
     localStorage.removeItem("user");
     window.location.href = "/";
     }else{
+
       getData
       .getCategory()
       .then((response) => {
@@ -83,7 +86,7 @@ const Home = () => {
     
     formData.append("product", productId);
     formData.append("quantity", "1");
-    formData.append("user",userId );
+    formData.append("user",userid );
     addData.addCart(formData).then((res)=>{
       swal('Add Cart', 'Success added to cart','success')
     }).catch((err)=>{
