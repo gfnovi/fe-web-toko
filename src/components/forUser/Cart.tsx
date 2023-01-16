@@ -118,7 +118,7 @@ const Cart = () => {
     formData.append('total_price', totalPrice);
     formData.append('recipient_name', name)
     formData.append('recipient_phone', phoneNumber)
-    formData.append('shippingAddress', address)
+    formData.append('shippingAddress', address+",City: "+orderCity+" ,Province: "+addressProv)
     addData.addTransaction(formData).then((res)=>{
       const close= document.getElementById('closeModalCheckout')
       close.click()
